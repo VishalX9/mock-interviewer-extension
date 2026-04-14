@@ -2,7 +2,7 @@
 
 A Chrome Extension that transforms any LeetCode problem into an interactive mock interview. Powered by the Gemini 2.5 Flash API, it acts as a strict technical interviewer—reviewing your logic, analyzing your time/space complexity, and offering conceptual hints without ever revealing the direct solution.
 
-
+[WATCH THE DEMO](https://drive.google.com/file/d/1suGMf991vKsNNk6QHFgIOVIExt2Wv7US/view?usp=sharing)
 
 ## Features
 * **Dynamic Context Extraction:** Automatically detects the current LeetCode problem description and the programming language you are using.
