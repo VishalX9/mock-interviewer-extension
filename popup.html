@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mock Interviewer</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-width: 420px;
+      min-height: 400px;
+      padding: 16px;
+      background: #f7f9fc;
+      margin: 0;
+    }
+    h2 { color: #111; margin-bottom: 12px; font-size: 18px; font-weight: 600; }
+    
+
+    .hidden { display: none !important; }
+
+
+    #setup-screen { display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; height: 350px; text-align: center; }
+    #setup-screen p { color: #4b5563; font-size: 14px; margin-bottom: 10px; }
+    #popup-api-key { width: 80%; padding: 10px; border-radius: 6px; border: 1px solid #ddd; }
+    #save-key-btn { background-color: #2563eb; color: white; width: 85%; padding: 10px; font-size: 14px; }
+    #save-key-btn:hover { background-color: #1e4fd1; }
+    #setup-error { color: #ef4444; font-size: 12px; height: 16px; }
+
+
+    .top-bar { display: flex; gap: 10px; margin-bottom: 12px; }
+    select { padding: 8px; border-radius: 6px; border: 1px solid #ddd; background: white; }
+    button { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; transition: 0.2s; }
+    #start-btn { background-color: #2563eb; color: white; }
+    #start-btn:hover { background-color: #1e4fd1; }
+    #hint-btn { background-color: #f59e0b; color: white; }
+    #hint-btn:hover { background-color: #d97706; }
+    #feedback-btn { background-color: #10b981; color: white; }
+    #feedback-btn:hover { background-color: #059669; }
+    #chat { margin-top: 12px; padding: 12px; border-radius: 10px; background: white; height: 260px; overflow-y: auto; border: 1px solid #e5e7eb; display: flex; flex-direction: column; gap: 10px; }
+    .msg { padding: 8px 10px; border-radius: 8px; max-width: 85%; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
+    .ai { background: #eef2ff; align-self: flex-start; }
+    .user { background: #dcfce7; align-self: flex-end; }
+    .typing-indicator { font-style: italic; color: #6b7280; }
+    .input-bar { display: flex; gap: 8px; margin-top: 10px; }
+    input { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #ddd; }
+    #send-btn { background-color: #111; color: white; }
+    #send-btn:hover { background-color: #333; }
+  </style>
+</head>
+<body>
+  <h2>Mock Interviewer</h2>
+
+  <div id="setup-screen" class="hidden">
+    <h3>Welcome! </h3>
+    <p>To use the Mock Interviewer, please provide your Gemini API key. This is stored securely on your local browser.</p>
+    <input type="password" id="popup-api-key" placeholder="Paste your API key here..." autocomplete="off" />
+    <button id="save-key-btn">Save & Continue</button>
+    <div id="setup-error"></div>
+  </div>
+
+  <div id="main-screen" class="hidden">
+    <div class="top-bar">
+      <select id="mode">
+        <option value="easy">Easy Guidance</option>
+        <option value="medium">Medium Pressure</option>
+        <option value="hard">Strict Interview</option>
+      </select>
+      <button id="start-btn">Start</button>
+      <button id="hint-btn">Hint</button>
+      <button id="feedback-btn">Review</button>
+    </div>
+    <div id="chat">
+      <div class="msg ai">Please open a LeetCode problem and click Start.</div>
+    </div>
+    <div class="input-bar">
+      <input id="user-input" placeholder="Type your approach..." autocomplete="off" />
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

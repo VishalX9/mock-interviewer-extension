@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Mock Interviewer for LeetCode",
+  "version": "1.0",
+  "description": "An AI-powered technical interviewer for LeetCode.",
+
+  "permissions": ["activeTab", "scripting", "storage"],
+
+  "host_permissions": ["https://leetcode.com/problems/*"],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Mock Interviewer",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "options_page": "options.html",
+
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
