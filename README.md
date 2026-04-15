@@ -16,7 +16,7 @@ A Chrome Extension that transforms any LeetCode problem into an interactive mock
 * **Architecture:** Content Scripts, Service Workers (Popup), Local/Sync Storage
 
 ## Installation (Local Development)
-1. Clone this repository: `git clone https://github.com/yourusername/mock-interviewer.git`
+1. Clone this repository: `git clone https://github.com/VishalX9/mock-interviewer.git`
 2. Open Google Chrome and navigate to `chrome://extensions/`.
 3. Enable **Developer mode** in the top right corner.
 4. Click **Load unpacked** and select the cloned repository folder.
