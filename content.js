@@ -30,29 +30,19 @@ function getFullEditorCode() {
   if (viewLines.length > 0) {
     return Array.from(viewLines).map(line => line.textContent || line.innerText).join('\n');
   }
-
-
-  const inputArea = document.querySelector('textarea.inputarea');
-  if (inputArea && inputArea.value) return inputArea.value;
-
-
-  const codeBlocks = document.querySelectorAll('code');
-  if (codeBlocks.length > 0) {
-    return Array.from(codeBlocks).map(c => c.innerText).join('\n');
-  }
-
   return ""; 
 }
 
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
   if (req.type === "GET_PROBLEM_CONTEXT") {
-    const text = getLeetCodeDescription();
-    const language = getLeetCodeLanguage();
-    sendResponse({ text, language });
+    sendResponse({ 
+      text: getLeetCodeDescription(), 
+      language: getLeetCodeLanguage() 
+    });
   } 
   else if (req.type === "GET_CURRENT_CODE") {
-    const code = getFullEditorCode();
-    sendResponse({ code });
+    sendResponse({ 
+      code: getFullEditorCode() 
+    });
   }
-  return true; 
 });
